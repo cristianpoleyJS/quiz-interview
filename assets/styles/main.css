@@ -1,0 +1,89 @@
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url(https://fonts.gstatic.com/s/raleway/v12/1Ptug8zYS_SKggPNyC0ISYttDfA.woff) format('woff');
+}
+
+body {
+    font-family: 'Raleway';
+    margin: 0px;
+}
+
+.home {
+    text-align: center;
+    vertical-align: middle;
+    margin: auto;
+    height: 100vh;
+}
+
+.image-rocket {
+    width: 400px;
+}
+
+.image-answer {
+    width: 100px;
+}
+
+.button-init-quiz {
+    background-color: #4f92e0;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    width: 60%;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10%;
+}
+
+.button-init-quiz:hover {
+    cursor: pointer;
+    background-color: #335e90;
+    transition: all 0.2s ease-in;
+}
+
+.question {
+    padding: 0px 15px;
+}
+
+.header-question {
+    background-color: #1e4ca4;
+    color: white;
+    padding: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.title-question {
+    color: #1e4ca4;
+    border-bottom: 1px solid #1e4ca4;
+    padding-bottom: 10px;
+}
+
+.answers {
+    display: inline-flex;
+}
+
+.answer {
+    border: 1px solid #eaeaea;
+    display: inline-table;
+}
+.answer:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+.answer:active {
+    border: 1px solid green;
+}
+
+@media (max-width: 768px) {
+    .home {
+        display: table-cell;
+    }
+    .button-init-quiz {
+        width: 90%;
+    }
+}
