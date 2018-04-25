@@ -1,34 +1,48 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Quiz</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- jQuery -->
-        <script src="js/jquery.min.js"></script>
+<head>
+    <title>Quiz</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Less -->
-        <script src="js/less.min.js" type="text/javascript"></script>
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
 
-        <!-- Styles -->
-        <link rel="stylesheet/less" type="text/css" href="assets/styles/quiz.less"/>
-        <link rel="stylesheet" type="text/css" href="assets/styles/main.css"/>
-        <!-- Javascripts -->
-        <script src="js/main.js"></script>
-    </head>
+    <!-- Less -->
+    <script src="js/less.min.js" type="text/javascript"></script>
 
-    <body>
-        <div class="home">
-            <img class="image-rocket" src="assets/images/rocket.png"/>
-            <h1 class="title">Prueba tu capacidad con este Quiz</h1>
-            <p>Responde lo más rápido que puedas y podrás ganar muchos premios</p>
-            <button onclick="initQuiz()" class="button-init-quiz">Empezar Quiz</button>
+    <!-- Styles -->
+    <link rel="stylesheet/less" type="text/css" href="assets/styles/quiz.less" />
+    <link rel="stylesheet" type="text/css" href="assets/styles/main.css" />
+    <!-- Javascripts -->
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <!-- Pantalla de inicio del Quiz -->
+    <div class="home" id="home">
+        <img class="image-rocket" src="assets/images/rocket.png" />
+        <h1 class="title">Prueba tu capacidad con este Quiz</h1>
+        <p>Responde lo más rápido que puedas y podrás ganar muchos premios</p>
+        <button onclick="initQuiz()" class="button-init-quiz">Empezar Quiz</button>
+    </div>
+    <!-- Todas las preguntas del Quiz -->
+    <div class="content">
+    </div>
+    <!-- Pantalla final (resultado) -->
+    <div class="results">
+        <img class="image-rocket" src="assets/images/medal.png" />
+        <h1 class="title">Felicidades</h1>
+        <p>Puntuación: <span id="score"></span></p>
+        <p>Tiempo invertido:</p>
+        <p>Si quedas finalista, nos pondremos en contacto contigo</p>
+        <div class="social">
+            <img src="assets/images/facebook.png" />
+            <img src="assets/images/twitter.png" />
         </div>
-        <div class="content">
-        </div>
-        <div id="time">
-        </div>
-    </body>
+    </div>
+</body>
+
 </html>

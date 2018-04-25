@@ -15,6 +15,7 @@ body {
     vertical-align: middle;
     margin: auto;
     height: 100vh;
+    padding: 0px 30px;
 }
 
 .image-rocket {
@@ -46,7 +47,7 @@ body {
 }
 
 .question {
-    padding: 0px 15px;
+    height: 100vh;
 }
 
 .header-question {
@@ -60,16 +61,20 @@ body {
 .title-question {
     color: #1e4ca4;
     border-bottom: 1px solid #1e4ca4;
-    padding-bottom: 10px;
+    padding: 0px 15px 10px 15px;
 }
 
-.answers {
-    display: inline-flex;
+.answers {    
+    padding: 0px 15px;
+    display: inline-grid;
 }
 
 .answer {
     border: 1px solid #eaeaea;
     display: inline-table;
+    padding: 20px;
+    text-align: center;
+    margin: 20px;
 }
 .answer:hover {
     opacity: 0.5;
@@ -86,4 +91,22 @@ body {
     .button-init-quiz {
         width: 90%;
     }
+}
+
+.results {
+    display: none;
+    text-align: center;
+}
+
+.social {
+    display: inline-block;
+    padding: 0px 20px;
+}
+.social img {
+    width: 30px;
+}
+
+/** Questions */
+#question1, #question2, #question3 {
+    display: none;
 }
