@@ -26,7 +26,9 @@ function getData() {
             json.data.forEach((elem, index) => {
                 index += 1;   
                 question = '<div class="question" id="question' + index + '">';
-                question += '<div class="header-question">' + index + '/' + json.data.length + '</div>';
+                question += '<div class="header-question">' + index + '/' + json.data.length;
+                question += '<img src="assets/images/equis-white.png" onclick="cancelQuiz()" class="cancel-quiz">';
+                question += '</div>';
                 question += '</div>';
                 // Guardamos en el localStorage cada pregunta y sus respuestas
                 localStorage.setItem("question" + index, JSON.stringify(json.data[index - 1]));
@@ -112,9 +114,9 @@ function finishQuiz() {
 function createQuestion(data, currentQuestion) {
     var html = 
         '<h5 class="title-question">' + data.question + '</h5>' +
-        '<div class="answers">';
+        '<div class="answers w3-row">';
         data.answers.forEach(elem => {
-            html += '<div class="answer" onclick="next(' + parseInt(currentQuestion) + ',' + parseInt(elem.score) + ')"><img class="image-answer" src="' + elem.image + '">';
+            html += '<div class="answer w3-col s6" onclick="next(' + parseInt(currentQuestion) + ',' + parseInt(elem.score) + ')"><img class="image-answer" src="' + elem.image + '">';
             html += '<p>' + elem.text + '</p>';
             html += '</div>';
         });

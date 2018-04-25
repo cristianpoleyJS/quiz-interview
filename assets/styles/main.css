@@ -26,6 +26,10 @@ body {
     width: 100px;
 }
 
+.description-home {
+    font-size: 12px;
+}
+
 .button-init-quiz {
     background-color: #4f92e0;
     border: none;
@@ -61,12 +65,8 @@ body {
 .title-question {
     color: #1e4ca4;
     border-bottom: 1px solid #1e4ca4;
-    padding: 0px 15px 10px 15px;
-}
-
-.answers {    
-    padding: 0px 15px;
-    display: inline-grid;
+    margin: 15px 10px 15px;
+    padding-bottom: 10px;
 }
 
 .answer {
@@ -89,12 +89,9 @@ body {
         display: table-cell;
     }
     .button-init-quiz {
-        width: 90%;
-    }
-    .image-rocket {
         width: 100%;
     }
-    .image-medal {
+    .image-rocket, .image-medal {
         width: 70%;
         margin-top: 40px;
     }
@@ -127,7 +124,7 @@ body {
     margin-top: 10px;
 }
 
-.cancel-quiz-result {
+.cancel-quiz {
     position: absolute;
     top: 30px;
     right: 20px;
