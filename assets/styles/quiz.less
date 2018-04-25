@@ -1,3 +1,138 @@
-.title {
-    color: red;
+.home {
+    text-align: center;
+    vertical-align: middle;
+    margin: auto;
+    height: 100vh;
+    padding: 0px 30px;
+
+    // Imagen del cohete
+    .image-rocket {
+        width: 400px;
+    }
+    // Mensaje de bienvenida en la home
+    .description-home {
+        font-size: 12px;
+    }
+    // Botón de inicio
+    .button-init-quiz {
+        background-color: #4f92e0;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        width: 60%;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 10%;
+        &:hover {
+            cursor: pointer;
+            background-color: #335e90;
+            transition: all 0.2s ease-in;
+        }
+    }
+}
+
+
+.image-answer {
+    width: 100px;
+}
+
+// Preguntas
+.question {
+    height: 100vh;
+    
+    // Cabecera con el número de la pregunta actual/preguntas totales
+    .header-question {
+        background-color: #1e4ca4;
+        color: white;
+        padding: 25px;
+        font-weight: bold;
+        text-align: center;
+    }
+    // Título de la pregunta
+    .title-question {
+        color: #1e4ca4;
+        border-bottom: 1px solid #1e4ca4;
+        margin: 15px 10px 15px;
+        padding-bottom: 10px;
+    }
+    // Respuestas
+    .answer {
+        border: 1px solid #eaeaea;
+        display: inline-table;
+        padding: 20px;
+        text-align: center;
+        margin: 20px;
+        &:hover {
+            opacity: 0.5;
+            cursor: pointer;
+        }
+        &:active {
+            border: 1px solid green;
+        }
+    }
+
+}
+
+.results {
+    display: none;
+    padding: 45px;
+    text-align: center;
+
+    // Puntuación y tiempo invertido en la prueba
+    #score, .time {
+        display: block;
+        font-size: 20px;
+        font-weight: 900;
+        color: #628cc1;
+        margin-top: 10px;
+    }
+
+    // Texto de contacto
+    .message-result {
+        font-size: 12px;
+    }
+
+    // Div que contiene a los iconos de las redes sociales
+    .social {
+        display: inline-block;
+        margin: 10px;
+        // Iconos
+        img {
+            width: 25px;
+            margin: 15px;
+        }
+    }
+}
+
+.cancel-quiz {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    width: 15px;
+}
+
+// Questions
+#question1, #question2, #question3 {
+    display: none;
+}
+
+// CSS específico para dispositivos móbiles
+@media (max-width: 768px) {
+    .home {
+        display: table-cell;
+        .image-rocket {
+            width: 70%;
+            margin-top: 40px;
+        }
+    }
+    .button-init-quiz {
+        width: 100%;
+    }
+    .image-medal {
+        width: 70%;
+        margin-top: 40px;
+    }
 }
