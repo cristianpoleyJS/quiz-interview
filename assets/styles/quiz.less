@@ -2,11 +2,13 @@
     text-align: center;
     vertical-align: middle;
     margin: auto;
+    width: 1000px;
     height: 100vh;
     padding: 0px 30px;
+    background-color: white;
 
     // Imagen del cohete
-    .image-rocket {
+    .image-rocket, .image-medal {
         width: 400px;
     }
     // Mensaje de bienvenida en la home
@@ -21,11 +23,11 @@
         padding: 15px 32px;
         text-align: center;
         text-decoration: none;
-        width: 60%;
+        width: 400px;
+        margin-top: 40px;
         display: inline-block;
         font-size: 14px;
         font-weight: bold;
-        margin-top: 10%;
         &:hover {
             cursor: pointer;
             background-color: #335e90;
@@ -39,48 +41,57 @@
     width: 100px;
 }
 
-// Preguntas
-.question {
-    height: 100vh;
+// Todas las preguntas
+.content {
+    vertical-align: middle;
+    margin: auto;
+    background-color: white;
+    width: 1000px;
     
-    // Cabecera con el número de la pregunta actual/preguntas totales
-    .header-question {
-        background-color: #1e4ca4;
-        color: white;
-        padding: 25px;
-        font-weight: bold;
-        text-align: center;
-    }
-    // Título de la pregunta
-    .title-question {
-        color: #1e4ca4;
-        border-bottom: 1px solid #1e4ca4;
-        margin: 15px 10px 15px;
-        padding-bottom: 10px;
-    }
-    // Respuestas
-    .answer {
-        border: 1px solid #eaeaea;
-        display: inline-table;
-        padding: 20px;
-        text-align: center;
-        margin: 20px;
-        &:hover {
-            opacity: 0.5;
-            cursor: pointer;
+    .question {
+        height: 100vh;
+        
+        // Cabecera con el número de la pregunta actual/preguntas totales
+        .header-question {
+            background-color: #1e4ca4;
+            color: white;
+            padding: 25px;
+            font-weight: bold;
+            text-align: center;
         }
-        &:active {
-            border: 1px solid green;
+        // Título de la pregunta
+        .title-question {
+            color: #1e4ca4;
+            border-bottom: 1px solid #1e4ca4;
+            margin: 15px 10px 15px;
+            padding-bottom: 10px;
+        }
+        // Respuestas
+        .answer {
+            text-align: center;
+            border: 1px solid #eaeaea;
+            display: inline-table;
+            padding: 20px;
+            text-align: center;
+            margin: 20px;
+            &:hover {
+                opacity: 0.5;
+                cursor: pointer;
+            }
+            &:active {
+                border: 1px solid green;
+            }
         }
     }
-
 }
 
 .results {
     display: none;
     padding: 45px;
     text-align: center;
-
+    background-color: white;
+    height: 100vh;
+    
     // Puntuación y tiempo invertido en la prueba
     #score, .time {
         display: block;
@@ -112,6 +123,7 @@
     top: 30px;
     right: 20px;
     width: 15px;
+    cursor: pointer;
 }
 
 // Questions
@@ -127,9 +139,12 @@
             width: 70%;
             margin-top: 40px;
         }
+        .button-init-quiz {
+            width: 100%;
+        }
     }
-    .button-init-quiz {
-        width: 100%;
+    .content {
+        width: inherit;
     }
     .image-medal {
         width: 70%;
