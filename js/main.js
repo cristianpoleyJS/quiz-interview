@@ -55,10 +55,10 @@ function getData() {
  * Función invocada cuando se inicia el Quiz
  */
 function initQuiz() {
-    $('.home').css('display', 'none' );
+    $('.home').fadeOut();
     var question1 = createQuestion(JSON.parse(localStorage.getItem('question1')), 1);
     $('#question1').append(question1);  
-    $('#question1').css('display', 'inherit');
+    $('#question1').fadeIn();
     this.setTime();
 }
 
@@ -80,7 +80,7 @@ function next(currentQuestion, score) {
 
         // Pasamos a la siguiente pregunta
         $('#question' + currentQuestion).css('display', 'none');
-        $('#question' + parseInt(currentQuestion + 1)).css('display', 'inherit');
+        $('#question' + parseInt(currentQuestion + 1)).fadeIn();
     }
 }
 
@@ -90,9 +90,9 @@ function next(currentQuestion, score) {
  */
 function cancelQuiz() {
     // Ocultamos todos el contenido y restauramos el valor del score
-    $('.home').css('display', 'inherit');
+    $('.home').fadeIn();
     $('.content').children().remove();
-    $('.results').css('display', 'none');
+    $('.results').fadeOut();
     localStorage.setItem('score', 0);
     this.getData();
     clearInterval(cronometro);
@@ -102,7 +102,7 @@ function cancelQuiz() {
  * Método para finalizar el Quiz, mostrando la pantalla de resultado.
  */
 function finishQuiz() {
-    $('.results').show();
+    $('.results').fadeIn();
     $('#score').html(localStorage.getItem('score'));
     clearInterval(cronometro);
 }
