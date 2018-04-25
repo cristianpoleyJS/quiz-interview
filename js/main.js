@@ -62,28 +62,28 @@ function initQuiz() {
 /**
  * Método invocado al clicar en una respuesta de las posibles respuestas de una pregunta
  */
-function next(elem) {
+function next(currentQuestion, score) {
     // Actualizamos la puntuación total del Quiz
-    localStorage.setItem('score', 2 + parseInt(localStorage.getItem('score')));
+    localStorage.setItem('score', score + parseInt(localStorage.getItem('score')));
     
     // Si es la última pregunta invocamos a finishQuiz()
-    if (elem == JSON.parse(localStorage.getItem('data')).length) {
-        $('#question' + elem).css('display', 'none');
+    if (currentQuestion == JSON.parse(localStorage.getItem('data')).length) {
+        $('#question' + currentQuestion).css('display', 'none');
         this.finishQuiz();
     } else {
         // Rellenamos el nuevo div
-        var newQuestion = createQuestion(JSON.parse(localStorage.getItem('question' + parseInt(elem + 1))), elem + 1);
-        $('#question' + parseInt(elem + 1)).append(newQuestion);
+        var newQuestion = createQuestion(JSON.parse(localStorage.getItem('question' + parseInt(currentQuestion + 1))), currentQuestion + 1);
+        $('#question' + parseInt(currentQuestion + 1)).append(newQuestion);
 
         // Pasamos a la siguiente pregunta
-        $('#question' + elem).css('display', 'none');
-        $('#question' + parseInt(elem + 1)).css('display', 'inherit');
+        $('#question' + currentQuestion).css('display', 'none');
+        $('#question' + parseInt(currentQuestion + 1)).css('display', 'inherit');
     }
 }
 
 /**
  * Método invocado al clicar en la "X" de las cabeceras de las preguntas, al lado
- * del número de la pregunta actual. Cancela el Quiz y vuelve a la pantalla principal.
+ * del número de la pregunta actual, y en la ventana del resultado. Cancela el Quiz y vuelve a la pantalla principal.
  */
 function cancelQuiz() {
     // Ocultamos todos el contenido y restauramos el valor del score
@@ -110,8 +110,8 @@ function createQuestion(data, currentQuestion) {
     var html = 
         '<h5 class="title-question">' + data.question + '</h5>' +
         '<div class="answers">';
-        data.answers.forEach((elem, index) => {
-            html += '<div class="answer" onclick="next(' + parseInt(currentQuestion) + ')"><img class="image-answer" src="' + elem.image + '">';
+        data.answers.forEach(elem => {
+            html += '<div class="answer" onclick="next(' + parseInt(currentQuestion) + ',' + parseInt(elem.score) + ')"><img class="image-answer" src="' + elem.image + '">';
             html += '<p>' + elem.text + '</p>';
             html += '</div>';
         });
