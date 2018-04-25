@@ -18,32 +18,41 @@
     <link rel="stylesheet" type="text/css" href="assets/styles/main.css" />
     <!-- Javascripts -->
     <script src="js/main.js"></script>
+    <script src="js/chronometer.js"></script>
 </head>
 
 <body>
     <!-- Pantalla de inicio del Quiz -->
     <div class="home" id="home">
-        <img class="image-rocket" src="assets/images/rocket.png" />
+        <img class="image-rocket" src="assets/images/rocket.png"/>
+
         <h1 class="title">Prueba tu capacidad con este Quiz</h1>
         <p>Responde lo más rápido que puedas y podrás ganar muchos premios</p>
+        
         <button onclick="initQuiz()" class="button-init-quiz">Empezar Quiz</button>
     </div>
+
     <!-- Todas las preguntas del Quiz -->
     <div class="content">
     </div>
+
     <!-- Pantalla final (resultado) -->
     <div class="results">
         <img src="assets/images/equis.png" onclick="cancelQuiz()" class="cancel-quiz-result">
         <img class="image-medal" src="assets/images/medal.png"/>
+
         <h4 class="title">¡Felicidades!</h4>
+        
         <p>Puntuación: <span id="score"></span></p>
-        <p>Tiempo invertido: <span id="time">12:49</span></p>
+        <p>Tiempo invertido: <span class="time"><span id="minutes">0</span>:<span id="seconds">0</span></span></p>
         <p class="message-result">Si quedas finalista, nos pondremos en contacto contigo</p>
+
         <div class="social">
             <img src="assets/images/facebook.png" />
             <img src="assets/images/twitter.png" />
         </div>
     </div>
+
 </body>
 
 </html>

@@ -57,6 +57,7 @@ function initQuiz() {
     var question1 = createQuestion(JSON.parse(localStorage.getItem('question1')), 1);
     $('#question1').append(question1);  
     $('#question1').css('display', 'inherit');
+    this.setTime();
 }
 
 /**
@@ -92,6 +93,7 @@ function cancelQuiz() {
     $('.results').css('display', 'none');
     localStorage.setItem('score', 0);
     this.getData();
+    clearInterval(cronometro);
 }
 
 /**
@@ -100,6 +102,7 @@ function cancelQuiz() {
 function finishQuiz() {
     $('.results').show();
     $('#score').html(localStorage.getItem('score'));
+    clearInterval(cronometro);
 }
 
 /**

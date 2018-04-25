@@ -119,7 +119,7 @@ body {
     font-size: 12px;
 }
 
-#score, #time {
+#score, .time {
     display: block;
     font-size: 20px;
     font-weight: 900;
